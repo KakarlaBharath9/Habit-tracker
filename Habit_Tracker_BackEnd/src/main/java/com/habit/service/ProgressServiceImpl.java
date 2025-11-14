@@ -28,7 +28,7 @@ public class ProgressServiceImpl implements ProgressService{
 			throw new RuntimeException("Not Authorized");
 		LocalDate date=LocalDate.parse(dto.getDate());
 		HabitProgress progress = progressRepository
-				.findByHabitIdandDate(dto.getHabitId(), date)
+				.findByHabitIdAndDate(dto.getHabitId(), date)
 				.orElse(new HabitProgress());
 		progress.setHabit(habit);
 		progress.setDate(date);
