@@ -8,6 +8,8 @@ import jakarta.persistence.*;
 @Table(name="habit_proogress",uniqueConstraints=@UniqueConstraint(columnNames= {"habit_id","date"}))
 
 public class HabitProgress {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="habit_id")
@@ -15,6 +17,7 @@ public class HabitProgress {
 	private LocalDate date;
 	private boolean completed;
 	
+	public HabitProgress() {}
 	//getters and setters
 	public Habit getHabit() {
 		return habit;

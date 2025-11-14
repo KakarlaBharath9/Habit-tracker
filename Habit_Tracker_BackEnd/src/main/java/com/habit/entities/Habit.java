@@ -7,6 +7,8 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="habits")
 public class Habit {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="user_id")
