@@ -54,17 +54,17 @@ public class HabitController {
 		return habitService.create(userId,dto);
 	}
 	//update habit
-	@PutMapping
+	@PutMapping("/{habitId}")
 	public HabitDto updateHabit(
-			@PathVariable Long HabitId,
+			@PathVariable Long habitId,
 			@RequestBody CreateHabitDto dto,
 			Authentication authentication
 			) {
 				Long userId=getUserId(authentication);
-				return habitService.update(userId, HabitId, dto);
+				return habitService.update(userId, habitId, dto);
 	}
 	//delete habit
-	@DeleteMapping
+	@DeleteMapping("/{habitId}")
 	public void deleteHabit(@PathVariable Long habitId,Authentication authentication) {
 		Long userId=getUserId(authentication);
 		habitService.delete(userId, habitId);
