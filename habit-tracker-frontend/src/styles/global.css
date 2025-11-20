@@ -4,3 +4,49 @@ body{
     font-family:Arial,sans-serif;
     background-color: #f7f9fc;
 }
+.container{
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+}
+.btn-primary{
+    background-color: #2563eb;
+    padding: 10px 18px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    background-color: #1e4fc7;
+}
+.input-box{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+.card{
+    background: white;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.header-bar{
+    background-color: #1e40af;
+    color:white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-title{
+    font-size: 22px;
+    font-weight: bold;
+}
+.nav-link{
+    margin-left: 15px;
+    color:white;
+    text-decoration: none;
+}
