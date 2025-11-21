@@ -6,6 +6,7 @@ import RegisterPage from "./pages/RegisterPage";
 import Dashboard from "./pages/Dashboard";
 import HabitForm from "./pages/HabitForm";
 import HabitDetails from "./pages/HabitDetails";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App(){
   return(
@@ -15,8 +16,9 @@ function App(){
         <Route path="/" element={<Dashboard/>} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<RegisterPage/>} />
-        <Route path="/habit/new" element={<HabitForm />} />
+        <Route path="/habit/create" element={<HabitForm />} />
         <Route path="/habit/:id" element={<HabitDetails/>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
     </Router>
   );

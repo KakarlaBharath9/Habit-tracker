@@ -1,0 +1,10 @@
+:root{
+    --primary-color:#4a90e2;
+    --primary-dark:#357ABD;
+    --bg-light:#f5f9ff;
+    --bg-light:#1e1e1e;
+    --text-dark:#333;
+    --text-light:#fff;
+    --border-radius:8px;
+    --font-main:"Inter", sans-serif;
+}
