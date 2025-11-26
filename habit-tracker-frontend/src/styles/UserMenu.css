@@ -17,17 +17,22 @@
     background-color: #3c7ac0;
 }
 
-.user-menu-dropdown{
-    position: absolute;
-    right: 0;
-    top: 40px;
+.user-menu-dropdown {
     background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    padding: 10px;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    padding: 12px;
     border-radius: 6px;
-    min-width: 120px;
-    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.20);
+    animation: dropdown 0.25s ease-out;
 }
+
+@keyframes dropdown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 
 .logout-btn{
     background-color: #d9534f;

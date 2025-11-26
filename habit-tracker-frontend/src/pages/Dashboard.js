@@ -17,12 +17,12 @@ function Dashboard(){
     return(
         <div className="container">
             <h2>Your Habits</h2>
-            <link to="/habit/new"><button className="btn-primary">+Add habit</button></link>
+            <Link to="/habit/new"><button className="btn-primary">+Add habit</button></Link>
             {habits.map(h=>(
                 <div className="card"key={h.id}>
                     <h3>{h.name}</h3>
                     <p>{h.description}</p>
-                    <link to={`/habit/${h.id}`}>View</link>
+                    <Link to={`/habit/${h.id}`}>View</Link>
                     </div>
             ))}
         </div>
