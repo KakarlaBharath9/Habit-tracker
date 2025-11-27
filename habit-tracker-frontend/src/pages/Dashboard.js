@@ -17,7 +17,7 @@ function Dashboard(){
     return(
         <div className="container">
             <h2>Your Habits</h2>
-            <Link to="/habit/new"><button className="btn-primary">+Add habit</button></Link>
+            <Link to="/habit/create"><button className="btn-primary">+Add habit</button></Link>
             {habits.map(h=>(
                 <div className="card"key={h.id}>
                     <h3>{h.name}</h3>

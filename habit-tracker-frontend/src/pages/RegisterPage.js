@@ -1,5 +1,6 @@
 import React,{useState} from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 function RegisterPage(){
     const[username,setUsername]=useState("");
@@ -13,6 +14,7 @@ function RegisterPage(){
         password,
         });
         alert("Registration successfull!");
+        Navigate("/login");
     };
     return(
         <div className="container">

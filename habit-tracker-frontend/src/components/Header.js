@@ -6,7 +6,7 @@ function Header(){
         <div className="header-bar">
             <span className="header-title">Habit Tracker</span>
             <div>
-                <link className="nav-link" to="/">Dashboard</link>
+                <Link className="nav-link" to="/">Dashboard</Link>
                 <Link className="nav-link" to="/login">Login</Link>
                 <Link className="nav-link" to="/register">Register</Link>
             </div>
