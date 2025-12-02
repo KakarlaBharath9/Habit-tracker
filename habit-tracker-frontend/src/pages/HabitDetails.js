@@ -20,12 +20,14 @@ function HabitDetails() {
       setStats(s.data);
 
       const today = new Date().toISOString().substring(0, 10);
+      try{
       const t = await API.get(`/progress/${id}/day/${today}`);
       setTodayDone(t.data.completed);
-
+      }catch{
+        setTodayDone(false);
+      }
     } catch (err) {
-      console.error(err);
-      alert("Error loading habit details");
+      console.error("Habit load error:",err);
     }
   }, [id]);
 

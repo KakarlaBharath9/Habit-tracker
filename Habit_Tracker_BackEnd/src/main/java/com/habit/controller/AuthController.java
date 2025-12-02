@@ -54,4 +54,11 @@ public class AuthController {
 
         return ResponseEntity.ok(new JwtResponse(jwt));
     }
+    
+    @GetMapping("/me")
+    public User getCurrentUser(Authentication auth) {
+        return userRepository.findByUsername(auth.getName())
+                .orElseThrow(() -> new RuntimeException("User not found"));
+    }
+
 }

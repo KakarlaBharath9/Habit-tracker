@@ -3,6 +3,7 @@ package com.habit.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.habit.dto.CreateHabitDto;
 import com.habit.dto.HabitDto;
+import com.habit.dto.SummaryDto;
 import com.habit.entities.User;
 import com.habit.repositories.UserRepository;
 import com.habit.service.HabitService;
@@ -69,5 +71,12 @@ public class HabitController {
 		Long userId=getUserId(authentication);
 		habitService.delete(userId, habitId);
 	}
+	
+	@GetMapping("/summary")
+	public ResponseEntity<SummaryDto> getSummary(Authentication auth) {
+	    Long userId = getUserId(auth);
+	    return ResponseEntity.ok(habitService.getSummary(userId));
+	}
+
 	
 }

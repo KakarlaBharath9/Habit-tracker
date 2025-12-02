@@ -9,6 +9,7 @@ import HabitDetails from "./pages/HabitDetails";
 import NotFoundPage from "./pages/NotFoundPage";
 import EditHabit from "./pages/EditHabit";
 import Navbar from "./components/Navbar";
+import ProfilePage from "./pages/ProfilePage";
 function App(){
   return(
     <Router>
@@ -22,6 +23,7 @@ function App(){
         <Route path="/habit/:id" element={<HabitDetails/>} />
         <Route path="*" element={<NotFoundPage/>} />
         <Route path="/habit/:id/edit" element={<EditHabit />} />
+        <Route path="/profile" element={<ProfilePage />} />
 
       </Routes>
     </Router>
