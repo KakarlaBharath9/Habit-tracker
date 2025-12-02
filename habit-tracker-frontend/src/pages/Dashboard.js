@@ -1,15 +1,19 @@
 import React,{useEffect,useState} from "react";
-import axios from "axios";
 import {Link}from "react-router-dom";
+import API from "../services/api";
+
 
 function Dashboard(){
     const[habits, setHabits]=useState([]);
 
     const loadHabits=async()=>{
-        const res = await axios.get("http://localhost:9090/api/habits/all",{
-            headers:{Authorization: `Bearer ${localStorage.getItem("token")}`},
-        });
+        try{
+        const res = await API.get("/habits/all");
         setHabits(res.data);
+    }catch(err){
+        console.error("Failed to load habits:",err);
+        alert("Error loading habits. Check backend & token.");
+    }
     };
 
     useEffect(()=>{loadHabits(); },[]);

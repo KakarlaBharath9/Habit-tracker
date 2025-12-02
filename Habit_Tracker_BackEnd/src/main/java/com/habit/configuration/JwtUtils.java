@@ -4,6 +4,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.security.Key;
 import java.util.Date;
@@ -49,5 +50,13 @@ public class JwtUtils {
             System.err.println("Invalid JWT: " + e.getMessage());
         }
         return false;
+    }
+    public String getJwtFromHeader(HttpServletRequest request) {
+        String headerAuth = request.getHeader("Authorization");
+
+        if (headerAuth != null && headerAuth.startsWith("Bearer ")) {
+            return headerAuth.substring(7);
+        }
+        return null;
     }
 }

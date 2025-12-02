@@ -35,8 +35,12 @@ public class AuthController {
         u.setEmail(dto.getEmail());
         u.setPassword(encoder.encode(dto.getPassword()));
         userRepository.save(u);
-
-        return ResponseEntity.ok("User registered successfully");
+        
+        //auto login after registration
+        Authentication auth = authManager.authenticate(
+        		new UsernamePasswordAuthenticationToken(dto.getUsername(),dto.getPassword()));
+        String jwt = jwtUtils.generateJwtToken(auth);
+        return ResponseEntity.ok(new JwtResponse(jwt));
     }
 
     @PostMapping("/login")
